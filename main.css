@@ -1,0 +1,167 @@
+/* Start Variables */
+:root {
+    /* Colors */
+    --main-bg-color: #FAFAFA;
+    --box-color: #FFFFFF;
+    --font-color: #555467;
+    --feat-color-1: #ED5355;
+    --feat-color-2: #5CC8C8;
+    --feat-color-3: #629CDB;
+    --feat-color-4: #EAAF68;
+    /* Border Sizes */
+    --main-border-size: 4px;
+    /* Opacities */
+    --main-opacity: 0.5;
+}
+/* End Variables */
+
+/* Start Main Settings */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color); 
+    font-family: "Poppins", sans-serif;
+    color: var(--font-color); 
+}
+/* End Main Settings */
+
+/* Start Features Section */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    max-width: 1200px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+/* Start Text */
+.container .text {
+    margin: 50px auto;
+    text-align: center;
+    width: 40%; 
+    max-width: 500px; 
+}
+.container .text h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--font-color);
+}
+.container .text h1:first-of-type {
+    font-weight: 200;
+}
+.container .text p {
+    font-size: 0.9em; 
+    opacity: var(--main-opacity);
+    line-height: 1.6; 
+}
+/* End Text  */
+/* Start Feature Box */
+.container .featureBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    padding: 20px 0; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.container .featureBox .feacture {
+    position: relative;
+    background-color: var(--box-color);
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    min-height: 200px;
+}
+.container .featureBox .feacture:nth-child(1),
+.container .featureBox .feacture:nth-child(3) {
+    transform: translateY(50%);
+}
+.container .featureBox .feacture:nth-child(1) {
+    border-top: var(--main-border-size) solid var(--feat-color-1);
+}
+.container .featureBox .feacture:nth-child(2) {
+    border-top: var(--main-border-size) solid var(--feat-color-2);
+}
+.container .featureBox .feacture:nth-child(3) {
+    border-top: var(--main-border-size) solid var(--feat-color-3);
+}
+.container .featureBox .feacture:nth-child(4) {
+    border-top: var(--main-border-size) solid var(--feat-color-4);
+}
+.container .featureBox .feacture h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+.container .featureBox .feacture p {
+    opacity: var(--main-opacity);
+    line-height: 1.5;
+}
+.container .featureBox .feacture .icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+/* End Feature Box */
+/* End Features Section */
+/* Start Responsive */
+@media (min-width: 1200px) {
+    .container .featureBox .feacture {
+        width: 330px;
+    }
+    .container .featureBox .feacture:last-of-type {
+        margin-left: 107%;
+    }
+}
+@media (max-width: 1199px) {
+    .container .text {
+        width: 60%; 
+    }
+    .container .featureBox {
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 15px;
+    }
+    .container .featureBox .feacture {
+        width: auto;
+    }
+    .container .featureBox .feacture:nth-child(1),
+    .container .featureBox .feacture:nth-child(3) {
+        transform: translateY(0); 
+    }
+}
+@media (max-width: 767px) {
+    .container .text {
+        width: 90%; 
+        margin: 30px auto; 
+    }
+    .container .text h1 {
+        font-size: 1.8em;
+    }
+    .container .text p {
+        font-size: 0.8em;
+    }
+    .container .featureBox {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        padding: 10px;
+    }
+    .container .featureBox .feacture {
+        transform: translateY(0) !important;
+        width: auto; 
+        min-height: auto; 
+    }
+    .container .featureBox .feacture:nth-child(4) {
+        grid-column: auto; 
+        width: auto; 
+    }
+    .container .featureBox .feacture .icon {
+        margin-top: 15px;
+    }
+}
+/* End Responsive */
